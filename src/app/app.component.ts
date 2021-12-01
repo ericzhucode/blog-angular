@@ -1,10 +1,28 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-root',
+  selector: 'root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
-  title = 'blog-ng';
+export class AppComponent implements OnInit {
+  public currentUser: any;
+
+  constructor(
+  ) {
+
+  }
+
+  ngOnInit() {
+    this.currentUser = {
+      userName: 'eric'
+    }
+  }
+
+  onMenuToggle() {
+  }
+
+  doLogout() {
+
+  }
 }

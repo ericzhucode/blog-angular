@@ -1,5 +1,8 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "cli": {
+    "analytics": "98379fdf-3c22-4108-8baf-e1e90a98d9c1"
+  },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
@@ -27,8 +30,9 @@
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
-              "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/mock-data",
+              "src/favicon.ico"
             ],
             "styles": [
               "src/styles.scss"
@@ -36,6 +40,28 @@
             "scripts": []
           },
           "configurations": {
+            "mock": {
+              "budgets": [
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.dev.ts",
+                  "with": "src/environments/environment.mock.ts"
+                }
+              ]
+            },
             "production": {
               "budgets": [
                 {
@@ -71,6 +97,9 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
+            "mock": {
+              "browserTarget": "EricZhu:build:mock"
+            },
             "production": {
               "browserTarget": "blog-ng:build:production"
             },
@@ -95,8 +124,9 @@
             "karmaConfig": "karma.conf.js",
             "inlineStyleLanguage": "scss",
             "assets": [
-              "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/mock-data",
+              "src/favicon.ico"
             ],
             "styles": [
               "src/styles.scss"
