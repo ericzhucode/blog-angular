@@ -8,8 +8,6 @@ import { RouterModule } from '@angular/router';
 import { PostDetailComponent } from './post-detail/post-detail.component';
 import { PostDetailMainComponent } from './post-detail-main/post-detail-main.component';
 
-
-
 @NgModule({
   declarations: [
     PostListComponent,

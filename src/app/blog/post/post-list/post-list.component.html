@@ -4,7 +4,7 @@
       <div class="post-item-container" *ngFor="let post of postList">
         <div class="col-md-10 post-item-text-container">
           <h3>
-            <a [routerLink]="['/post/post-detail',post.postId]">{{post.title}}</a>
+            <a [routerLink]="['/post/post-detail',post._id]" [queryParams]="{id:post._id}">{{post.title}}</a>
           </h3>
           <div class="user-name-intitle">
             <div class="row">
@@ -18,7 +18,7 @@
               </div>
             </div>
           </div>
-          <div class="abs">{{post.content}}...</div>
+          <div class="abs">{{post.desc}}...</div>
         </div>
       </div>
     </div>

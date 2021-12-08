@@ -20,10 +20,10 @@ export class PostListComponent implements OnInit {
   }
 
   public loadData() {
-    return this.postService.getPostList().subscribe(
+    return this.postService.getArticleList().subscribe(
       res => {
-        this.postList = res["items"]
-        console.log(">>>", this.postList)
+        this.postList = res.data.list;
+        console.log(">>>", res);
       },
       error => { console.log(error) },
       () => { }
